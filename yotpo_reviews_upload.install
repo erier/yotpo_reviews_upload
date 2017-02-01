@@ -1,0 +1,113 @@
+<?php
+
+function yotpo_reviews_upload_schema() {
+	$schema['yotpo_reviews'] = array(
+		'description' => t('Yotpo Reviews from CSV'),
+		'fields' => array(
+			'id' => array(
+				'description' => 'ID of Review',
+				'type' => 'serial',
+				'unsigned' => TRUE,
+				'not null' => TRUE),
+
+			'appkey' => array(
+				'description' => 'Yotpo Appkey',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'published' => array(
+				'description' => 'Yotpo published status',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'review_title' => array(
+				'description' => 'Review Title',
+				'type' => 'text',
+				'not null' => FALSE),
+
+			'review_content' => array(
+				'description' => 'Review Content',
+				'type' => 'text',
+				'not null' => FALSE),
+
+			'review_score' => array(
+				'description' => 'Review Score',
+				'type' => 'int',
+				'not null' => FALSE),
+
+			'date' => array(
+				'description' => 'Review Date',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'user_type' => array(
+				'description' => 'User Type',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'product_id' => array(
+				'description' => 'Review Product ID',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'product_url' => array(
+				'description' => 'Review Product URL',
+				'type' => 'text',
+				'not null' => FALSE),
+
+			'product_title' => array(
+				'description' => 'Review Product Title',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'product_description' => array(
+				'description' => 'Review Product Description',
+				'type' => 'text',
+				'not null' => FALSE),
+
+			'product_image_url' => array(
+				'description' => 'Review Product Image (from Yotpo AWS)',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'display_name' => array(
+				'description' => 'User Display Name',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'email' => array(
+				'description' => 'User Review Email',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'comment_content' => array(
+				'description' => 'Comment left on review',
+				'type' => 'text',
+				'not null' => FALSE),
+
+			'comment_public' => array(
+				'description' => 'Whether or not comment is public',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+
+			'comment_created_at' => array(
+				'description' => 'Date comment was created',
+				'type' => 'varchar',
+				'length' => '255',
+				'not null' => FALSE),
+			),
+		'primary key' => array('id'),
+	);
+
+	return $schema;
+}

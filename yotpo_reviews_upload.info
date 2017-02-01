@@ -1,0 +1,4 @@
+name = Yotpo | Reviews Upload
+package = Yotpo
+description = Enables users to upload Yotpo CSV file into dedicated site database table
+core = 7.x

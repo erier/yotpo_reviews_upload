@@ -1,0 +1,16 @@
+<?php
+require_once('yotpo_reviews_upload.admin.inc');
+
+/**
+ * Implements hook_menu().
+ */
+function yotpo_reviews_upload_menu() {
+	$items['admin/config/content/yotpo-reviews-upload'] = array(
+		'title' => 'Yotpo CSV Upload',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('yotpo_reviews_upload_config_form'),
+		'access arguments' => array('administer users'),
+	);
+
+	return $items;
+}
